@@ -18,8 +18,17 @@ class GameScene: SKScene {
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
-    override func sceneDidLoad() {
+    @objc func injected() {
+        self.removeAllChildren()
 
+        configureView()
+    }
+    
+    override func sceneDidLoad() {
+        configureView()
+    }
+
+    func configureView() {
         self.lastUpdateTime = 0
         
         // Get label node from scene and store it for use later
